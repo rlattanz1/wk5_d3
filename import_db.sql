@@ -1,3 +1,5 @@
+PRAGMA foreign_keys = ON;
+
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     fname TEXT NOT NULL,
@@ -51,4 +53,19 @@ CREATE TABLE question_likes (
 
 
 INSERT INTO
-        users (fname, lname)
+    users (fname, lname)
+    VALUES
+    ('Rocco', 'Lattanzio'),
+    ('Matthew', 'Montejo');
+
+INSERT INTO 
+    questions (title, body, assossiated_author_id)
+    VALUES
+    ('What is SQL?', 'So many questions', 1),
+    ('Seriously, What is SQL?', 'Still so many questions', 2);
+
+INSERT INTO
+    question_follows (question_id, user_id)
+    VALUES
+    ((SELECT assossiated_author_id FROM questions WHERE id = assossiated_author_id),
+    (SELECT user_id FROM users WHERE id = user_id));
