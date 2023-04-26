@@ -1,0 +1,6 @@
+
+
+
+class Questions < QuestionsDatabase
+
+end
