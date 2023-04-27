@@ -13,6 +13,14 @@ end
 
 class Users
 
+    # For each class, add a class method find_by_id which will lookup an id in the table and return an object representing that row.
+    # For example, our Question::find_by_id should return an instance of our Question class, NOT the data hash returned by the QuestionsDatabase! 
+    # Your ::find_by_id method should contain Question.new somewhere.
+
+    def self.find_by_id(fname, lname)
+        # user_data = QuestionsDatabase.insat
+    end
+
     def intitialize(options)
         @id = options['id']
         @fname = options['fname']
